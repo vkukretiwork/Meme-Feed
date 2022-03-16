@@ -106,10 +106,7 @@ class MemesFeedFragment : Fragment(R.layout.fragment_memes_feed), IMemesFeedAdap
 
     override fun navigateToSwipeMemeFragment(meme : JSONObject) {
         val memeStr = meme.toString()
-
         val action = MemesFeedFragmentDirections.actionMemesFeedFragmentToSwipeMemesFragment(memeStr)
-
-
         navHostFragment.findNavController().navigate(action)
     }
 
@@ -125,8 +122,6 @@ class MemesFeedFragment : Fragment(R.layout.fragment_memes_feed), IMemesFeedAdap
         titleView.text = meme.getString("title")
         subredditView.text = meme.getString("subreddit")
 
-
-
         with(builder){
             setView(dialogLayout)
         }
@@ -137,8 +132,8 @@ class MemesFeedFragment : Fragment(R.layout.fragment_memes_feed), IMemesFeedAdap
         }
         titleView.setOnClickListener {
             val postLink = meme.getString("postLink")
-            val builder = CustomTabsIntent.Builder()
-            val customTabsIntent = builder.build()
+            val builder2 = CustomTabsIntent.Builder()
+            val customTabsIntent = builder2.build()
             customTabsIntent.launchUrl(requireContext(), Uri.parse(postLink))
         }
         dialog.show()

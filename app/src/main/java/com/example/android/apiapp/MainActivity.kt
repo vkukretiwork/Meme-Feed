@@ -21,9 +21,12 @@ class MainActivity : AppCompatActivity() {
                         R.id.quotesFragment, R.id.memesFeedFragment
                             -> {
                             bottomNavigationView.visibility = View.VISIBLE
+                            supportActionBar!!.show()
                         }
                         else -> {
+                            supportActionBar!!.hide()
                             bottomNavigationView.visibility = View.GONE
+
                         }
                     }
                 }
