@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/memesFeedFragment">
+
+
+    <fragment
+        android:id="@+id/quotesFragment"
+        android:name="com.example.android.apiapp.QuotesFragment"
+        android:label="QuotesFragment" />
+    <fragment
+        android:id="@+id/memesFeedFragment"
+        android:name="com.example.android.apiapp.MemesFeedFragment"
+        android:label="MemesFeedFragment" >
+        <action
+            android:id="@+id/action_memesFeedFragment_to_swipeMemesFragment"
+            app:destination="@id/swipeMemesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/swipeMemesFragment"
+        android:name="com.example.android.apiapp.SwipeMemesFragment"
+        android:label="SwipeMemesFragment" >
+        <argument
+            android:name="memeStringFromMemeFeed"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
