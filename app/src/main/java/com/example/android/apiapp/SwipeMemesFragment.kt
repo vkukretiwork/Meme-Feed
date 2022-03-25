@@ -8,15 +8,18 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.browser.customtabs.CustomTabsIntent
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
+import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_swipe_memes.*
+import org.json.JSONException
 import org.json.JSONObject
 
 
@@ -63,11 +66,11 @@ class SwipeMemesFragment : Fragment(R.layout.fragment_swipe_memes), ISwipeMemesA
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, themeUrl, null,
                 { response ->
                     val memesArray = response.getJSONArray("memes")
-                    for(i in 0 until memesArray.length()){
+                    for (i in 0 until memesArray.length()) {
                         val meme = memesArray[i] as JSONObject
                         val imgType = meme.getString("url").takeLast(3)
-                        if(imgType != "gif")
-                        memeList.add(memesArray[i] as JSONObject)
+                        if (imgType != "gif")
+                            memeList.add(memesArray[i] as JSONObject)
                     }
 
                     swipeMemesAdapter.submitList(memeList)
@@ -97,7 +100,7 @@ class SwipeMemesFragment : Fragment(R.layout.fragment_swipe_memes), ISwipeMemesA
         customTabsIntent.launchUrl(requireContext(), Uri.parse(postLink))
     }
 
-    override fun showMemeInDialog(meme : JSONObject){
+    override fun showMemeInDialog(meme: JSONObject){
         val builder = AlertDialog.Builder(context)
         val inflater = layoutInflater
         val dialogLayout = inflater.inflate(R.layout.meme_dialog, null)
