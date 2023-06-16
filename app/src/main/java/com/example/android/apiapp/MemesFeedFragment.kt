@@ -31,6 +31,9 @@ class MemesFeedFragment : Fragment(R.layout.fragment_memes_feed), IMemesFeedAdap
             "wholesomememes", "me_irl", "dankmemes", "memes", "raimimemes", "historymemes",
             "AdviceAnimals", "ComedyCemetery", "terriblefacebookmemes", "funny", "teenagers" )
 
+//    Testing specific subreddits
+//    private val subreddits = mutableListOf("dankmemes", "memes")
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.title = "Memes"
@@ -77,7 +80,8 @@ class MemesFeedFragment : Fragment(R.layout.fragment_memes_feed), IMemesFeedAdap
 
     private fun getMemesFromSubreddit(subreddit : String, isLast : Boolean){
 
-        val url = "https://meme-api.herokuapp.com/gimme/${subreddit}/4"
+//        val url = "https://meme-api.herokuapp.com/gimme/${subreddit}/4"
+        val url = "https://meme-api.com/gimme/${subreddit}/4"
 
         val jsonObjectRequest = JsonObjectRequest( Request.Method.GET, url, null,
                 { response ->

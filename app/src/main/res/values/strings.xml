@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MemesFeed</string>
+    <string name="aboutTheApp">The Meme-Feed app fetches memes from different subreddits through an API.
+    </string>
+    <string name="apiHyperlink"><a href="https://meme-api.com/gimme">meme-api.com/gimme</a></string>
+    <string name="guideText">
+        1. Scroll through the Home page to load more memes.
+        "\n"2. Press and hold on to a meme to open it in a dialog box.
+        "\n"3. You can zoom the image in the dialog box.
+        "\n"4. Tap on a meme\'s \"Title\" to open the source post on Reddit.
+        "\n"5. Tap on the share button to share a meme.
+        "\n"6. If you tap on a meme on the Home page, you will be directed to another page
+        where you can swipe through memes of the same subreddit.
+
+    </string>
 </resources>

@@ -33,7 +33,7 @@ class SwipeMemesFragment : Fragment(R.layout.fragment_swipe_memes), ISwipeMemesA
         super.onViewCreated(view, savedInstanceState)
 
         val obj = JSONObject(arguments?.let { SwipeMemesFragmentArgs.fromBundle(it).memeStringFromMemeFeed }!!)
-        themeUrl = "https://meme-api.herokuapp.com/gimme/${obj.getString("subreddit")}/10"
+        themeUrl = "https://meme-api.com/gimme/${obj.getString("subreddit")}/10"
 
         setUpViewPager2()
 

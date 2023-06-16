@@ -6,8 +6,8 @@
 
 
     <fragment
-        android:id="@+id/quotesFragment"
-        android:name="com.example.android.apiapp.QuotesFragment"
+        android:id="@+id/aboutFragment"
+        android:name="com.example.android.apiapp.AboutFragment"
         android:label="QuotesFragment" />
     <fragment
         android:id="@+id/memesFeedFragment"

@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         navHostFragment.findNavController()
                 .addOnDestinationChangedListener{ _, destination, _ ->
                     when(destination.id){
-                        R.id.quotesFragment, R.id.memesFeedFragment
+                        R.id.aboutFragment, R.id.memesFeedFragment
                             -> {
                             bottomNavigationView.visibility = View.VISIBLE
                             supportActionBar!!.show()
